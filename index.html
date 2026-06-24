@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolution Cell v0.1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <header class="hud">
+      <div class="hud-item">
+        <span class="hud-label">Размер</span>
+        <span class="hud-value" id="size-display">20</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Энергия</span>
+        <span class="hud-value" id="energy-display">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">До мутации</span>
+        <span class="hud-value" id="mutation-progress">10</span>
+      </div>
+      <div class="hud-mutations" id="mutations-display"></div>
+    </header>
+
+    <canvas id="game-canvas" width="800" height="600"></canvas>
+
+    <footer class="controls-hint">
+      WASD или мышь — движение
+    </footer>
+  </div>
+
+  <div class="mutation-overlay hidden" id="mutation-overlay">
+    <div class="mutation-modal">
+      <h2>🧬 Выберите мутацию</h2>
+      <p class="mutation-subtitle">Вы съели достаточно — эволюционируйте!</p>
+      <div class="mutation-cards" id="mutation-cards"></div>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

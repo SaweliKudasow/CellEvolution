@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #0d1b2a 0%, #050a12 100%);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #e0e6ed;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud {
+  width: 800px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  background: rgba(15, 25, 40, 0.85);
+  border: 1px solid rgba(100, 180, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hud-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b8aad;
+}
+
+.hud-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4fc3f7;
+}
+
+.hud-mutations {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mutation-badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #81c784;
+}
+
+#game-canvas {
+  border-radius: 12px;
+  border: 1px solid rgba(100, 180, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  cursor: crosshair;
+}
+
+.controls-hint {
+  font-size: 13px;
+  color: #4a6080;
+}
+
+.mutation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.mutation-overlay.hidden {
+  display: none;
+}
+
+.mutation-modal {
+  background: linear-gradient(145deg, #132238, #0d1a2d);
+  border: 1px solid rgba(100, 180, 255, 0.3);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 640px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.mutation-modal h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #e0e6ed;
+}
+
+.mutation-subtitle {
+  color: #6b8aad;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.mutation-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mutation-card {
+  flex: 1;
+  min-width: 160px;
+  max-width: 180px;
+  padding: 20px 16px;
+  background: rgba(20, 35, 55, 0.9);
+  border: 2px solid rgba(100, 180, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.mutation-card:hover:not(.disabled) {
+  transform: translateY(-4px);
+  border-color: #4fc3f7;
+  box-shadow: 0 8px 24px rgba(79, 195, 247, 0.2);
+}
+
+.mutation-card.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mutation-card .icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.mutation-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #4fc3f7;
+}
+
+.mutation-card p {
+  font-size: 12px;
+  color: #6b8aad;
+  line-height: 1.4;
+}
+
+.mutation-card .level {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #81c784;
+}
